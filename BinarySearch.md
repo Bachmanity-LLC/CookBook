@@ -5,36 +5,36 @@
 <p>In its simplest form, binary search is used to quickly find a value in a sorted sequence (consider a sequence an ordinary array for now). We’ll call the sought value the target value for clarity. Binary search maintains a contiguous subsequence of the starting sequence where the target value is surely located. This is called the search space. The search space is initially the entire sequence. At each step, the algorithm compares the median value in the search space to the target value. Based on the comparison and because the sequence is sorted, it can then eliminate half of the search space. By doing this repeatedly, it will eventually be left with a search space consisting of a single element, the target value.
 </p>
 <h2>Psuedo code:</h2>
-<p>
-binary_search(A, target):<br>
-   lo = 1, hi = size(A)<br>
-   while lo <= hi:<br>
-      mid = lo + (hi-lo)/2<br>
-      if A[mid] == target:<br>
-         return mid<br>            
-      else if A[mid] < target:<br> 
-         lo = mid+1<br>
-      else:<br>
-         hi = mid-1<br>
+<pre><code>
+binary_search(A, target):
+   lo = 1, hi = size(A)
+   while lo <= hi:
+      mid = lo + (hi-lo)/2
+      if A[mid] == target:
+         return mid     
+      else if A[mid] < target: 
+         lo = mid+1
+      else:
+         hi = mid-1
             
    // target was not found
-</p>
+</code></pre>
 <h2>C++ Implementation:</h2>
-<p>
-int binarySearch(int* arr,int l,int r,int x)<br>
-{<br>
-   if(r>=l)<br>
-   {<br>
+<pre><code>
+int binarySearch(int* arr,int l,int r,int x)
+{
+   if(r>=l)
+   {
         int mid=l+(r-l)/2;<br>
-        if(arr[mid]==x) <br> 
-        return mid;<br>
-        if(arr[mid]>x)<br> 
-        return binarySearch(arr,l,mid-1,x);<br>
-        return binarySearch(arr,mid+1,r,x);<br>
-   }<br>
-   return -1;<br>
+        if(arr[mid]==x) 
+        return mid;
+        if(arr[mid]>x)
+        return binarySearch(arr,l,mid-1,x);
+        return binarySearch(arr,mid+1,r,x);
+   }
+   return -1;
 }
-</p>
+</code></pre>
 <h2>Complexity:</h2>
 <p>Since each comparison binary search uses halves the search space, we can assert and easily prove that binary search will never use more than (in big-oh notation) O(log N) comparisons to find the target value.The logarithm is an awfully slowly growing function
 <br>
