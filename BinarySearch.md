@@ -6,33 +6,33 @@
 </p>
 <h2>Psuedo code:</h2>
 <p>
-binary_search(A, target):
-   lo = 1, hi = size(A)
-   while lo <= hi:
-      mid = lo + (hi-lo)/2
-      if A[mid] == target:
-         return mid            
-      else if A[mid] < target: 
-         lo = mid+1
-      else:
-         hi = mid-1
+binary_search(A, target):<br>
+   lo = 1, hi = size(A)<br>
+   while lo <= hi:<br>
+      mid = lo + (hi-lo)/2<br>
+      if A[mid] == target:<br>
+         return mid<br>            
+      else if A[mid] < target:<br> 
+         lo = mid+1<br>
+      else:<br>
+         hi = mid-1<br>
             
    // target was not found
 </p>
 <h2>C++ Implementation:</h2>
 <p>
-int binarySearch(int* arr,int l,int r,int x)
-{
-   if(r>=l)
-   {
-        int mid=l+(r-l)/2;
-        if(arr[mid]==x)  
-        return mid;
-        if(arr[mid]>x) 
-        return binarySearch(arr,l,mid-1,x);
-        return binarySearch(arr,mid+1,r,x);
-   }
-   return -1;
+int binarySearch(int* arr,int l,int r,int x)<br>
+{<br>
+   if(r>=l)<br>
+   {<br>
+        int mid=l+(r-l)/2;<br>
+        if(arr[mid]==x) <br> 
+        return mid;<br>
+        if(arr[mid]>x)<br> 
+        return binarySearch(arr,l,mid-1,x);<br>
+        return binarySearch(arr,mid+1,r,x);<br>
+   }<br>
+   return -1;<br>
 }
 </p>
 <h2>Complexity:</h2>

@@ -1,7 +1,8 @@
-# CookBook
-The Following Repository is log for various algorithms,data structures and other techniques that we came across while preparing ourselves for competitive coding
-
+<h1>CookBook</h1>
+<h2>The Following Repository is log for various algorithms,data structures and other techniques that we came across while preparing ourselves for competitive coding</h2>
+<p>
 The following algorithms and data structures can be currently found in this repository
-
-The following algorithms and data structures will be added in due course of time
-1)<a href="#">Binary Search</a>
+<ul>
+<li><a href="https://github.com/Bachmanity-LLC/CookBook/blob/master/BinarySearch.md">Binary Search</a></li>
+</ul>
+</p>
