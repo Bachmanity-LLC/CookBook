@@ -72,7 +72,9 @@ snakes.reverse()
 ```
 ***
 Now, once we have the backward and forward arrays, we need to find the maximum, to do so, we need to compare, the forward and backward array, and choose the minimum between the forward and backward array for each position and compare this value from all positions and choose maximum to minimise steps.  
+
 For comparing, compare forward[j] and backward[j+1]+1, because the value at a spot to be maximum has to be 1 more than it's left and right element. Hence, we compare from both ends, forward[j] and backward[j+1]+1 and choose minimum and **NOT** maximum, since it can't exceed the value of either backward or forward, as these are it's maximum possible value for backward and forward traversing.  
+
 And we need to choose the maximum from comparing all positions and this is the maximum peak and insert this value into the formula derived above.  
 
 So, for the above example-  
