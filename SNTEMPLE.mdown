@@ -18,14 +18,26 @@ Can be changed to 10000, 12100, 01000, 12321, 01210, 00100, 00121, 00010, 00001 
 13221
 
 Can be changed to 10000, 12100, 01000, ~~12321~~, 01210, 00100, 00121, 00010, 00001 but notice that here, the element in 3<sup>rd</sup> position from start, can't be 3, since we aren't allowed to increment an integer, only decremenet is allowed. In the later part of the discussion here, we will come to conclusion that 12100, 01210, 00121 all these 3 are the arrangements that require minimum changes. 
+
 ***
+
 As mentioned above all 3- 12100, 01210, 00121 are valid answers and require minimum number of steps, and we can draw an intuitive proof for this- 
+
 For making all terms of the sequence 0- you need to make changes equal to the sum of the sequence.
+
 Example- 
-13221- If it changes to 00000, 9 changes need to be made- 1+3+2+2+1=9. So, we get a blank slate, but we want to make either of the-  10000, 12100, 01000, ~~12321~~, 01210, 00100, 00121, 00010, 00001, and you can notice now, why 12100, 01210, 00121 will take same steps.
+
+13221- If it changes to 00000, 9 changes need to be made- 1+3+2+2+1=9. 
+
+So, we get a blank slate, but we want to make either of the-  10000, 12100, 01000, ~~12321~~, 01210, 00100, 00121, 00010, 00001, and you can notice now, why 12100, 01210, 00121 will take same steps.
+
 We can form a formula for steps required to make the sequence, the formula is-
+
 (sum of array)-n<sup>2</sup>. Where, n is the peak of the sequence. So the maximum the peak, the lesser steps we will need to make.
+
+
 Where and how did n<sup>2</sup> come into the picture ? 
+
 For 12321, or 1234321, notice it is (1+2)*2 + 3 or (1+2+3)*2 + 4, sum of x natural numbers, formula is x*(x+1)/2, here the x is n-1, where n is peak, so it is- 
 ((n-1)*(n)/2)*2+n which is (n-1)(n)+n which is n<sup>2</sup>.
 
