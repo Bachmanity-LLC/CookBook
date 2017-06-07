@@ -1,12 +1,12 @@
 ## PROBLEM LINK:
-[Practice](https://www.codechef.com/problems/SNTEMPLE "SNTEMPLE Practice")
+[SNTEMPLE Practice](https://www.codechef.com/problems/SNTEMPLE "SNTEMPLE Practice")
 ***
 ## PROBLEM:
 Given a sequence of integers, you need to change it into a sequence, that is increasing by 1, till it reaches a local maxima, then decreasing by 1 from there. Also, note that this sequence, shall start and end with 1. And if there are even number of integers in the series, change the starting or ending x integers to 0 accordingly.
 #### The goal is to reach this sequence is minimum steps.
 
 **NOTE:** You are allowed to decrease the integers only, you can't increase them. ie. 3 can be only changed to 2, 1 or 0 and nothing greater than 3.  
-**NOTE:** As per the given comnstraints the minimum value of input sequence shall be 1 and **NOT** 0.
+**NOTE:** As per the given constraints the minimum value of input sequence shall be 1 and **NOT** 0.
 
 Example:
 
