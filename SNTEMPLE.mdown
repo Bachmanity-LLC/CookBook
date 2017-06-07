@@ -10,48 +10,46 @@ Given a sequence of integers, you need to change it into a sequence, that is inc
 
 Example:
 
-12431  
+**12431**  
 Can be changed to 10000, 12100, 01000, 12321, 01210, 00100, 00121, 00010, 00001 but the one requiring minimum steps is 12321.
 
-13221  
+**13221**  
 Can be changed to 10000, 12100, 01000, ~~12321~~, 01210, 00100, 00121, 00010, 00001 but notice that here, the element in 3<sup>rd</sup> position from start, can't be 3, since we aren't allowed to increment an integer, only decremenet is allowed. In the later part of the discussion here, we will come to conclusion that 12100, 01210, 00121 all these 3 are the arrangements that require minimum changes. 
 
 ***
 
-As mentioned above all 3- 12100, 01210, 00121 are valid answers and require minimum number of steps, and we can draw an intuitive proof for this- 
-
+As mentioned above all 3- 12100, 01210, 00121 are valid answers and require minimum number of steps, and we can draw an intuitive proof for this-  
 For making all terms of the sequence 0- you need to make changes equal to the sum of the sequence.
 
-Example- 
+Example:
 
-13221- If it changes to 00000, 9 changes need to be made- 1+3+2+2+1=9. 
-
-So, we get a blank slate, but we want to make either of the-  10000, 12100, 01000, ~~12321~~, 01210, 00100, 00121, 00010, 00001, and you can notice now, why 12100, 01210, 00121 will take same steps.
-
+**13221**- If it changes to 00000, 9 changes need to be made- 1+3+2+2+1=9.  
+So, we get a blank slate, but we want to make either of the-  10000, 12100, 01000, ~~12321~~, 01210, 00100, 00121, 00010, 00001, and you can notice now, why 12100, 01210, 00121 will take same steps.  
 We can form a formula for steps required to make the sequence, the formula is-
 
 (sum of array)-n<sup>2</sup>. Where, n is the peak of the sequence. So the maximum the peak, the lesser steps we will need to make.
 
-
 Where and how did n<sup>2</sup> come into the picture ? 
 
-For 12321, or 1234321, notice it is (1+2)*2 + 3 or (1+2+3)*2 + 4, sum of x natural numbers, formula is x*(x+1)/2, here the x is n-1, where n is peak, so it is- 
-((n-1)*(n)/2)*2+n which is (n-1)(n)+n which is n<sup>2</sup>.
+For 12321, or 1234321, notice it is (1+2)x2 + 3 or (1+2+3)x2 + 4, sum of y natural numbers, formula is yx(y+1)/2, here y is n-1, where n is peak, so it is-   
+((n-1)*(n)/2)x2+n which is (n-1)(n)+n which is n<sup>2</sup>.
 
-Now, we have the formula- (sum of array)-n<sup>2</sup>. We just need to find n, the peak.
+Now, we have the formula: (sum of array)-n<sup>2</sup>. We just need to find n, the peak.
 ***
 Back to the first two examples, the point that I wanted to make with the above two examples is, that the maximum of a number is bounded, either by the position (*ie. it's backward sequence, since it needs to be one greater than it's precedence*) it is in, or by the number itself, since we can't incremenet it. ie. Since the sequence needs to start and end in 1-
-Example-
-12541
-Here, the maximum here can be - 12341
+
+Example:
+
+**12541**  
+Here, the maximum here can be - 12341  
 But, the series is broken here, if you look at it from the back, since we only need a difference of 1 between consequtive elements above 0. That's why we also need an array, that does the same thing from backwards- that will be- 12321
 
-So we need to make a forward and a backward array, that encapsulates the maximum value a position can have, when we traverse forward and backward both, some more examples-
-125741-
-forward- 123441
-backward- 124321
+So we need to make a forward and a backward array, that encapsulates the maximum value a position can have, when we traverse forward and backward both, some more examples-  
+**125741**:  
+forward: 123441  
+backward: 124321  
 
-Python code for finding backward and forward arrays-
+Python code for finding backward and forward arrays:  
 ```python
 totalsnakes=int(input()) #input length of the sequence
 snakes=list(map(int, input().split())) #input sequence of integers
@@ -72,18 +70,20 @@ backward.reverse()
 snakes.reverse()
 ```
 ***
-Now, once we have the backward and forward arrays, we need to find the maximum, to do so, we need to compare, the forward and backward array, and choose the minimum between the forward and backward array for each position and compare this value from all positions and choose maximum to minimise steps.
-For comparing, compare forward[j] and backward[j+1]+1, because the value at a spot to be maximum has to be 1 more than it's left and right element. Hence, we compare from both ends, forward[j] and backward[j+1]+1 and choose minimum and **NOT** maximum, since it can't exceed the value of either backward or forward, as these are it's maximum possible value for backward and forward traversing.
-And we need to choose the maximum from comparing all positions and this is the maximum peak and insert this value into the formula derived above.
-So, for the above example-
-125741-
-forward- 123441
-backward- 124321
-after comparing each position, the maximum value it can have-
-123321
+Now, once we have the backward and forward arrays, we need to find the maximum, to do so, we need to compare, the forward and backward array, and choose the minimum between the forward and backward array for each position and compare this value from all positions and choose maximum to minimise steps.  
+For comparing, compare forward[j] and backward[j+1]+1, because the value at a spot to be maximum has to be 1 more than it's left and right element. Hence, we compare from both ends, forward[j] and backward[j+1]+1 and choose minimum and **NOT** maximum, since it can't exceed the value of either backward or forward, as these are it's maximum possible value for backward and forward traversing.  
+And we need to choose the maximum from comparing all positions and this is the maximum peak and insert this value into the formula derived above.  
+So, for the above example-  
+**125741**:  
+forward- 123441  
+backward- 124321  
+after comparing each position, the maximum value it can have:  
+123321  
+
 **NOTE:** The last element is not ompared since it has to be 1.
-But, we have 2 peaks here, and we need only 1 peak ! Not to worry, our formula takes care of it, as it only takes in one maximum, which is 3 here, and automatically adjusts the surrounding elements-
-So, the changes required here is- 1+2+5+7+4+1=20-3<sup>2</sup>=11.
+
+But, we have 2 peaks here, and we need only 1 peak ! Not to worry, our formula takes care of it, as it only takes in one maximum, which is 3 here, and automatically adjusts the surrounding elements-  
+So, the changes required here is- 1+2+5+7+4+1=20-3<sup>2</sup>=11.  
 ***
 Python code for the later part of the problem-
 ```python
