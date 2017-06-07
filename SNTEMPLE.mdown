@@ -1,16 +1,23 @@
-##PROBLEM LINK:
+## PROBLEM LINK:
 [Practice](https://www.codechef.com/problems/SNTEMPLE "SNTEMPLE Practice")
 ***
-##PROBLEM:
-Given a sequence of integers, you need to change it into a sequence, that is increasing by 1, till it reaches a local maxima, then decreasing by 1 from there. Also, note that this sequence, shall start and end with 1. And if there are even number of integers in the series, change the starting or ending x integers to 0 accordingly. **The goal is to reach this sequence is minimum steps.**
-**NOTE:**You are allowed to decrease the integers only, you can't increase them. ie. 3 can be only changed to 2, 1 or 0 and nothing greater than 3.
-**NOTE:**As per the given comnstraints the minimum value of input sequence shall be 1 and **NOT** 0.
+## PROBLEM:
+Given a sequence of integers, you need to change it into a sequence, that is increasing by 1, till it reaches a local maxima, then decreasing by 1 from there. Also, note that this sequence, shall start and end with 1. And if there are even number of integers in the series, change the starting or ending x integers to 0 accordingly.
+#### The goal is to reach this sequence is minimum steps.
+
+**NOTE:** You are allowed to decrease the integers only, you can't increase them. ie. 3 can be only changed to 2, 1 or 0 and nothing greater than 3.
+
+**NOTE:** As per the given comnstraints the minimum value of input sequence shall be 1 and **NOT** 0.
+
 Example:
+
 12431
-can be changed to 10000, 12100, 01000, 12321, 01210, 00100, 00121, 00010, 00001 but the one requiring minimum steps is 12321.
+
+Can be changed to 10000, 12100, 01000, 12321, 01210, 00100, 00121, 00010, 00001 but the one requiring minimum steps is 12321.
 
 13221
-can be changed to 10000, 12100, 01000, ~~12321~~, 01210, 00100, 00121, 00010, 00001 but notice that here, the element in 3<sup>rd</sup> position from start, can't be 3, since we aren't allowed to increment an integer, only decremenet is allowed. In the later part of the discussion here, we will come to conclusion that 12100, 01210, 00121 all these 3 are the arrangements that require minimum changes. 
+
+Can be changed to 10000, 12100, 01000, ~~12321~~, 01210, 00100, 00121, 00010, 00001 but notice that here, the element in 3<sup>rd</sup> position from start, can't be 3, since we aren't allowed to increment an integer, only decremenet is allowed. In the later part of the discussion here, we will come to conclusion that 12100, 01210, 00121 all these 3 are the arrangements that require minimum changes. 
 ***
 As mentioned above all 3- 12100, 01210, 00121 are valid answers and require minimum number of steps, and we can draw an intuitive proof for this- 
 For making all terms of the sequence 0- you need to make changes equal to the sum of the sequence.
