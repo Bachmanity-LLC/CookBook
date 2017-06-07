@@ -31,8 +31,8 @@ We can form a formula for steps required to make the sequence, the formula is-
 
 Where and how did n<sup>2</sup> come into the picture ? 
 
-For 12321, or 1234321, notice it is (1+2)x2 + 3 or (1+2+3)x2 + 4, sum of y natural numbers, formula is yx(y+1)/2, here y is n-1, where n is peak, so it is-   
-((n-1)*(n)/2)x2+n which is (n-1)(n)+n which is n<sup>2</sup>.
+For 12321, or 1234321, notice it is (1+2) x 2 + 3 or (1+2+3) x 2 + 4, sum of y natural numbers, formula is y x (y+1) / 2, here y is n-1, where n is peak, so it is-   
+((n-1)(n)/2) x 2 + n which is (n-1)(n)+n which is n<sup>2</sup>.
 
 Now, we have the formula: (sum of array)-n<sup>2</sup>. We just need to find n, the peak.
 ***
@@ -45,6 +45,7 @@ Here, the maximum here can be - 12341
 But, the series is broken here, if you look at it from the back, since we only need a difference of 1 between consequtive elements above 0. That's why we also need an array, that does the same thing from backwards- that will be- 12321
 
 So we need to make a forward and a backward array, that encapsulates the maximum value a position can have, when we traverse forward and backward both, some more examples-  
+
 **125741**:  
 forward: 123441  
 backward: 124321  
@@ -73,7 +74,9 @@ snakes.reverse()
 Now, once we have the backward and forward arrays, we need to find the maximum, to do so, we need to compare, the forward and backward array, and choose the minimum between the forward and backward array for each position and compare this value from all positions and choose maximum to minimise steps.  
 For comparing, compare forward[j] and backward[j+1]+1, because the value at a spot to be maximum has to be 1 more than it's left and right element. Hence, we compare from both ends, forward[j] and backward[j+1]+1 and choose minimum and **NOT** maximum, since it can't exceed the value of either backward or forward, as these are it's maximum possible value for backward and forward traversing.  
 And we need to choose the maximum from comparing all positions and this is the maximum peak and insert this value into the formula derived above.  
+
 So, for the above example-  
+
 **125741**:  
 forward- 123441  
 backward- 124321  
