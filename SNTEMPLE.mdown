@@ -44,7 +44,7 @@ For 12321, or 1234321, notice it is (1+2) x 2 + 3 or (1+2+3) x 2 + 4, sum of y n
 Now, we have the formula: (sum of array)-n<sup>2</sup>. We just need to find n, the peak.
 ***
 ### 2.Finding maximum peak *(by checking backward and forward array)*
-Back to the first two examples, the point that I wanted to make with the above two examples is, that the maximum of a number is bounded, either by the position (*ie. it's backward sequence, since it needs to be one greater than it's precedence*) it is in, or by the number itself, since we can't incremenet it. ie. Since the sequence needs to start and end in 1-
+Back to the first two [examples](#example-cases), the point that I wanted to make with the above two examples is, that the maximum of a number is bounded, either by the position (*ie. it's backward sequence, since it needs to be one greater than it's precedence*) it is in, or by the number itself, since we can't incremenet it. ie. Since the sequence needs to start and end in 1-
 
 Example:
 
