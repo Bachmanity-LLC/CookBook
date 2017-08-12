@@ -6,6 +6,6 @@ The following algorithms and data structures can be currently found in this repo
 <li><a href="https://github.com/Bachmanity-LLC/CookBook/blob/master/BinarySearch.md">Binary Search</a></li>
 </ul>
 <ul>
-<li><a href="https://github.com/Bachmanity-LLC/CookBook/blob/master/BinarySearch.md">Bubble Sort</a></li>	
+<li><a href="https://github.com/Bachmanity-LLC/CookBook/blob/master/bubblesort.md">Bubble Sort</a></li>	
 </ul>
 </p>
