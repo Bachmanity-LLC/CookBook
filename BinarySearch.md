@@ -1,4 +1,4 @@
-<h1><i>Binary Search<i></h1>>
+<h1><i>Binary Search<i></h1>
 <p>Binary search is the most popular Search algorithm.It is efficient and also one of the most commonly used techniques that is used to solve problems.
 </p>
 <h2>Finding a value in a sorted sequence</h2>
@@ -62,3 +62,9 @@ Also it requires that the data is arranged monotonically.
 </p>
 </p>
 <p>As such binary search appears to be a very primary search technique but it is highly efficient and can be used at several places to find solution where binary search may not strike as an intutive method as such</p>
+<p>There are inbuilt libraries for binary search in couple of popular programming languages -
+<ul>
+      <li>C++: lower_bound() and upper_bound()</li>
+      <li>Python: bisect library is used for the same</li>
+</ul>
+</p>
